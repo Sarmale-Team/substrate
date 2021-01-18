@@ -112,7 +112,7 @@ impl<B: BlockT> InformantDisplay<B> {
 				Colour::White.bold().paint(format!("{}", best_number)),
 				best_hash,
 				Colour::White.bold().paint(format!("{}", finalized_number)),
-				info.chain.finalized_hash,
+				best_hash,
 				Colour::Green.paint(format!("⬇ {}", TransferRateFormat(avg_bytes_per_sec_inbound))),
 				Colour::Red.paint(format!("⬆ {}", TransferRateFormat(avg_bytes_per_sec_outbound))),
 			)
@@ -127,7 +127,7 @@ impl<B: BlockT> InformantDisplay<B> {
 				best_number,
 				best_hash,
 				finalized_number,
-				info.chain.finalized_hash,
+				best_hash,
 				TransferRateFormat(avg_bytes_per_sec_inbound),
 				TransferRateFormat(avg_bytes_per_sec_outbound),
 			)
